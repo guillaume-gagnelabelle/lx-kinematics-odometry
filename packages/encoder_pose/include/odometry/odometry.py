@@ -14,7 +14,10 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> float:
     """
 
     # TODO: these are random values, you have to implement your own solution in here
-    dphi = np.random.random()
+    alpha = 2 * np.pi / resolution
+    delta_ticks = ticks - prev_ticks
+    
+    dphi = delta_ticks * alpha
     # ---
     return dphi
 
@@ -49,8 +52,15 @@ def estimate_pose(
     """
 
     # These are random values, replace with your own
-    x_curr = np.random.random()
-    y_curr = np.random.random()
-    theta_curr = np.random.random()
+    d_right = R * delta_phi_right
+    d_left = R * delta_phi_left
+    
+    d = (d_right + d_left) / 2
+    
+    delta_theta = (d_right - d_left) / baseline
+    theta_curr = theta_prev + delta_theta
+
+    x_curr = x_prev + d * np.cos(theta_curr)
+    y_curr = y_prev + d * np.sin(theta_curr)
     # ---
     return x_curr, y_curr, theta_curr
