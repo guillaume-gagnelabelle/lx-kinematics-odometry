@@ -117,10 +117,10 @@ où ROBOTNAME peut être un robot réel ou virtuel, mais s'il s'agit d'un robot 
 Dans un autre terminal (sur l'ordinateur), vous pouvez lancer le visualiseur `noVNC` pour cet exercice, qui peut être utile pour envoyer des commandes au robot et visualiser l'odométrie que vous calculez dans la fenêtre RViZ.
 
 ```
-dts code vnc -R [ROBOT_NAME]
+dts code vnc -R [ROBOTNAME]
 ```
 
-où `[ROBOT_NAME]` peut être le robot réel ou virtuel (utilisez celui avec lequel vous avez exécuté la commande `dts code workbench`).
+où `[ROBOTNAME]` peut être le robot réel ou virtuel (utilisez celui avec lequel vous avez exécuté la commande `dts code workbench`).
 
 Vous pouvez maintenant passer au [premier cahier](./notebooks/01-Representations/pose_representation.ipynb).
 
